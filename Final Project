@@ -1,0 +1,322 @@
+import pygame
+songs_titles = [ 'mr. brightside', 'separate ways', 'gimme three steps', 'purple haze', 'big iron', 'heat of the moment', 'magic carpet ride', 'slow ride', 'head games', 'africa' ]
+songs_artists = [ 'the killers', 'journey', 'lynrd skynyrd', 'jimi hendrix', 'marty robbins', 'asia', 'steppenwolf', 'foghat', 'foreigner', 'toto' ]
+var1 = '/Users/randyb/Desktop/Music/Mr. Brightside.ogg'
+var2 = '/Users/randyb/Desktop/Music/Separate Ways .ogg'
+var3 = '/Users/randyb/Desktop/Music/1.4 Gimme Three Steps.ogg'
+var4 = '/Users/randyb/Desktop/Music/Purple Haze.ogg'
+var5 = '/Users/randyb/Desktop/Music/Big Iron  Marty Robbins.ogg'
+var6 = '/Users/randyb/Desktop/Music/Heat of the Moment.ogg'
+var7 = '/Users/randyb/Desktop/Music/Magic Carpet Ride.ogg'
+var8 = '/Users/randyb/Desktop/Music/Slow Ride.ogg'
+var9 = '/Users/randyb/Desktop/Music/Head Games.ogg'
+var10 = '/Users/randyb/Desktop/Music/Africa.ogg'
+
+def pmusic(file):
+    pygame.init()
+    pygame.mixer.init()
+    clock = pygame.time.Clock()
+    pygame.mixer.music.load(file)
+    pygame.mixer.music.play()
+
+
+def stopmusic():
+    pygame.mixer.music.stop()
+
+
+
+def getmixerargs():
+    pygame.mixer.init()
+    freq, size, chan = pygame.mixer.get_init()
+    return freq, size, chan
+
+
+
+def initMixer():
+    BUFFER = 3072  
+    FREQ, SIZE, CHAN = getmixerargs()
+    pygame.mixer.init(FREQ, SIZE, CHAN, BUFFER)
+
+
+print('Welcome to Guess the Song!\n Here are the Rules\n You will have to guess the name of the song that is playing.\n Players will recieve 1 point for correct answers and lose 1 point for incorrect answers.\n Good Luck and Have Fun!\n--TYPE start to Start Game--')
+user_choice = input('\n: ')
+
+
+def options():
+    if user_choice != ('q'):
+        initMixer()
+        file = var1
+        pmusic(file)
+    else:
+        print('Invalid')
+options()
+
+class skip:
+    def nextSong1():
+        initMixer()
+        file = var2
+        pmusic(file)
+
+    def nextSong2():
+        initMixer()
+        file = var3
+        pmusic(file)
+
+    def nextSong3():
+        initMixer()
+        file = var4
+        pmusic(file)
+
+    def nextSong4():
+        initMixer()
+        file = var5
+        pmusic(file)
+    
+    def nextSong5():
+        initMixer()
+        file = var6
+        pmusic(file)
+
+    def nextSong6():
+        initMixer()
+        file = var7
+        pmusic(file)
+    
+    def nextSong7():
+        initMixer()
+        file = var8
+        pmusic(file)
+
+    def nextSong8():
+        initMixer()
+        file = var9
+        pmusic(file)
+
+    def nextSong9():
+        initMixer()
+        file = var10
+        pmusic(file)
+
+
+score = 0
+i = 0
+
+
+def song_guess1():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1
+        skip.nextSong1()
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+         skip.nextSong1()
+        
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess1()
+        score = score - 1
+        
+def song_guess2():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1 
+        skip.nextSong2()
+        
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+         skip.nextSong2()    
+
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess2()
+        score = score - 1
+
+def song_guess3():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1 
+        skip.nextSong3()      
+
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+         skip.nextSong3()
+
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess3()
+        score = score - 1
+
+        
+def song_guess4():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1 
+        skip.nextSong4()      
+
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+         skip.nextSong4()    
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess4()
+        score = score - 1
+        
+
+def song_guess5():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1 
+        skip.nextSong5()
+        
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+         skip.nextSong5()    
+
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess5()
+        score = score - 1
+
+def song_guess6():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1 
+        skip.nextSong6()
+        
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+         skip.nextSong6()    
+
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess6()
+        score = score - 1
+
+def song_guess7():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1
+        skip.nextSong7()
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+         skip.nextSong7()
+        
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess7()
+        score = score - 1
+        
+def song_guess8():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1
+        skip.nextSong8()
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+         skip.nextSong8()
+        
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess8()
+        score = score - 1
+
+def song_guess9():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1
+        skip.nextSong9()
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+         skip.nextSong9()
+        
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess9()
+        score = score - 1
+        
+def song_guess10():
+    global score
+    global i
+    songAnswer = str(input('Who is the Artist or What is the Song Title? '))
+    if songAnswer == songs_titles [i]:
+        print('Correct! + 1 point.\n')
+        score = score + 1
+        i = i + 1
+        
+    elif songAnswer == songs_artists [i]:
+         print('Correct! + 1 point.\n')
+         score = score + 1
+         i = i + 1
+        
+        
+    else:
+        print('Incorrect. -1 point.\n')
+        song_guess10()
+        score = score - 1
+        
+song_guess1()
+song_guess2()
+song_guess3()
+song_guess4()
+song_guess5()
+song_guess6()
+song_guess7()
+song_guess8()
+song_guess9()
+song_guess10()
+stopmusic()
+print('Your Score is', score, 'out of 10.')
